@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>김윤석 바보</title>
+    <meta charset="utf-8">
+    <style>
+    @font-face {
+    font-family: 'HSSaemaul-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    .letter{
+        text-align: center;
+        font-family: 'GangwonEduSaeeum_OTFMediumA';
+        font-size: 150%;}
+    .flower {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: url('flower.png');
+    background-size:cover;
+    position: absolute;
+    top: -20px;
+    animation: fall 6s ease-in-out;
+    z-index: -1;
+    }
+
+    @keyframes fall {
+        from {
+        transform: translateY(-100%);
+        }
+        to {
+        transform: translateY(5500%);
+        bottom: 0;
+        opacity: 0;
+        }
+    }
+    </style>
+
+</head>
+
+<body>
+    <div style="position: relative;">
+        <div style="text-align: center;">
+            <img src="letter.jpg" alt="your-image-description">
+            <div style="position: absolute; top: 500px; left: 50%; transform: translate(-50%, -50%); color: black;">
+                <p class="letter">윤석이의 25번째 생일을 축하합니다~<br>
+                나랑 있으면서 맞이하는 공식 첫번째 생일😎<br>
+                뭔가 멋있는 편지를 주고싶어서 만들어봤어<br>
+                감쪽같이 몰랐겠지 내가 이런 거 하고 있는 줄은 ㅋ<br>
+                뭔가 이것저것 더 멋진 기능들을 추가하고 싶었는데<br>
+                그러기에는 너무 복잡해서... 못 했다<br>
+                그래도 내 마음이 잘 전달되었기를 바란다!!!<br>
+                왜 하필 오늘이 딱 못 만나는 화요일이라 아쉽네<br>
+                아무쪼록 생일이니까 과외생한테 조각케이크도 챙겨받고 그래<br>
+                많이 많이 축하받고 최고로 행복한 생일이 되었으면 좋겠고<br>
+                항상 건강과 행운이 함께 깃들고 하시는 모든 일 잘되시길 기원합니다.<br>
+                아무튼 이거 F12를 누르든 페이지 우클릭을 하든 코드를 뜯어보면<br>
+                금방 비밀번호가 나오니까<br>
+                진짜 하고싶은 말들은 따로 써줄게 사랑해 <br><br>
+                2023년 2월 24일<br>
+                윤석이의 생일을 축하하며<br>
+                아인이가<br>
+            </p>
+            </div>
+        </div>
+      </div>
+
+
+      <body onload="startFlowerRain()">
+        <div id="flowers"></div>
+      
+      <script>
+        function startFlowerRain() {
+          setInterval(createFlower, 100);
+        }
+      
+        function createFlower() {
+          const flowersContainer = document.getElementById("flowers");
+          const flower = document.createElement("div");
+          flower.classList.add("flower");
+          flower.style.left = Math.random() * 100 + "vw";
+          flowersContainer.appendChild(flower);
+          setTimeout(() => {
+            flower.remove();
+          }, 5000);
+        }
+        </script>
+      
+</body>
+</html>
