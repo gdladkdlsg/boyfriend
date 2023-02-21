@@ -44,6 +44,21 @@
         opacity: 0;
         }
     }
+    /* 모바일에서 이미지 크기 늘리기 */
+    @media (max-width: 600px) {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+/* 컴퓨터에서 이미지 크기 원래대로 되돌리기 */
+@media (min-width: 601px) {
+  img {
+    max-width: none;
+    height: auto;
+  }
+}
     </style>
  
 </head>
