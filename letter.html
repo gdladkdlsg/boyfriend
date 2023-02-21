@@ -46,14 +46,13 @@
         }
     }
   
-    img{
-      display:block !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      height:150% !important;
-      margin:0 auto !important;
-
+    @media only screen and (max-width: 425px) {
+    img {
+        width: 100% !important;
+        height: 200% !important;
+        max-width: none !important;
     }
+}
       
     
   
@@ -65,7 +64,7 @@
 <body>
     <div style="position: relative;">
         <div style="text-align: center;">
-            <img src="letter.jpg" alt="your-image-description">
+            <img src="lettter.jpg" alt="your-image-description">
             <div style="position: absolute; top: 500px; left: 50%; transform: translate(-50%, -50%); color: black;">
                 <p class="letter">윤석이의 25번째 생일을 축하합니다~<br>
                 나랑 있으면서 맞이하는 공식 첫번째 생일😎<br>
@@ -109,6 +108,6 @@
           }, 5000);
         }
         </script>
-      
+      <oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onkeydownn="return false"></oncontextmenu>
 </body>
 </html>
