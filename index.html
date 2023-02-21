@@ -78,25 +78,29 @@
   .flower {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
     background-image: url('flower.png');
-    background-size:cover;
-    position: absolute;
-    top: -20px;
-    animation: fall 9s ease-in-out;
+    background-size: cover;
+    position: fixed;
+    bottom: 0;
     z-index: -1;
+    animation: flowerFall 8s ease-in-out;
   }
 
-  @keyframes fall {
+  @keyframes flowerFall {
     from {
-      transform: translateY(-100%);
+      transform: translate(0, -100vh);
     }
     to {
-      transform: translateY(6500%);
-      bottom: 0;
-      opacity: 0;
+      transform: translate(0, calc(100vh - 50px));
     }
   }
+  @media only screen and (max-width: 425px) {
+    img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+    }
+}
 
 </style>
         
@@ -179,22 +183,23 @@ $(document).ready(function(){
   <body onload="startFlowerRain()">
     <div id="flowers"></div>
   
-  <script>
-    function startFlowerRain() {
-      setInterval(createFlower, 500);
-    }
-  
-    function createFlower() {
-      const flowersContainer = document.getElementById("flowers");
-      const flower = document.createElement("div");
-      flower.classList.add("flower");
-      flower.style.left = Math.random() * 100 + "vw";
-      flowersContainer.appendChild(flower);
-      setTimeout(() => {
-        flower.remove();
-      }, 8000);
-    }
-    </script>
+
+   <script>
+  function startFlowerRain() {
+    setInterval(createFlower, 500);
+  }
+
+  function createFlower() {
+    const flowersContainer = document.getElementById("flowers");
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.style.left = Math.random() * 100 + "vw";
+    flowersContainer.appendChild(flower);
+    setTimeout(() => {
+      flower.remove();
+    }, 8000);
+  }
+</script>
     
 <oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onkeydownn="return false">
 
