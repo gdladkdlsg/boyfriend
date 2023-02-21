@@ -32,7 +32,7 @@
     position: absolute;
     top: -20px;
     animation: fall 9s ease-in-out;
-    z-index: -1;
+    z-index: 0;
     }
 
     @keyframes fall {
@@ -62,7 +62,6 @@
 </head>
 
 <body>
-  <br>
   <br>
     <div style="position: relative;">
         <div style="text-align: center;">
@@ -96,7 +95,7 @@
       
       <script>
         function startFlowerRain() {
-          setInterval(createFlower, 100);
+          setInterval(createFlower, 1000);
         }
       
         function createFlower() {
